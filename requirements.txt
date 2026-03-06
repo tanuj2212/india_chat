@@ -1,4 +1,3 @@
-pip install 
 langchain 
 langchain-openai 
 youtube-transcript-api 
