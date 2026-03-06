@@ -1,0 +1,6 @@
+pip install 
+langchain 
+langchain-openai 
+youtube-transcript-api 
+chromadb flask 
+python-dotenv
