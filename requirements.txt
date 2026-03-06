@@ -1,5 +1,7 @@
 langchain 
 langchain-openai 
 youtube-transcript-api 
-chromadb flask 
+chromadb 
+flask 
 python-dotenv
+
