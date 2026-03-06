@@ -1,9 +1,17 @@
 import os
 from dotenv import load_dotenv
-from langchain_community.document_loaders import YoutubeLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_community.vectorstores import Chroma
+import os
+import streamlit as st
+from dotenv import load_dotenv
+
+# Try importing, and provide a clear error if it fails
+try:
+    from langchain_community.document_loaders import YoutubeLoader
+    from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+    from langchain_community.vectorstores import Chroma
+except ImportError as e:
+    st.error(f"Missing Package: {e}")
+    st.stop()
 from langchain.chains import RetrievalQA
 
 load_dotenv()
@@ -38,4 +46,5 @@ llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
 qa_chain = RetrievalQA.from_chain_type(llm, retriever=vector_db.as_retriever())
 
 # Example query
+
 # response = qa_chain.invoke("What did Dhruv say about the Indian economy?")
